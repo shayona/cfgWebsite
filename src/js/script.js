@@ -22,8 +22,8 @@ function load(name, skipPushState) {
   Pace.restart();
 
   $('.app').load(`${name} .app-container`, function() {
-    $("title").html($('.app-container').data('title'));
-    document.title = $('.app-container').data('title');
+    $("title").html(`Coding For Good | ${$('.app-container').data('title')}`);
+    document.title = `Coding For Good | ${$('.app-container').data('title')}`;
     document.body.scrollTop = document.documentElement.scrollTop = 0;
 
     if (name == "/contact") {

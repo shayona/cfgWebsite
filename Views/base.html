@@ -19,7 +19,7 @@
     <a href='/' class='header__logo'>Coding For Good</a>
   </header>
   <div class='app'>
-    <div class='app-container' data-title='Coding For Good | {{ title }}'>
+    <div class='app-container' data-title='{{ title }}'>
       <ul class='header__links'>
         {% for p, page_name in pages%}
         <li><a class='header__links-item {{ p }} {{ page == p ? "s" : "" }}' href='/{{ p == "home" ? "" : p }}'>{{ page_name }}</a></li>
