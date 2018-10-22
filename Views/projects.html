@@ -33,9 +33,7 @@
       {% endif %}
       <div class='card-content'>
         <h5 class='card-title'>{{ project.title }}</h5>
-        {% set desc = project.desc[0]|split(' ') %}
-        {% set desc = "#{desc|slice(0, project.img is defined ? 10 : 40)|join(' ')}..." %}
-        <p class=' card-text'>{{ desc }}</p>
+        <p class=' card-text'>{{ "#{project.desc[0]|split(' ')|slice(0, project.img is defined ? 10 : 40)|join(' ')}..." }}</p>
       </div>
     </a>
   </div>
