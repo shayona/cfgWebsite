@@ -1,0 +1,39 @@
+{% spaceless %}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+  <meta name='apple-mobile-web-app-capable' content='yes'>
+  <meta name='apple-mobile-web-app-status-bar-style' content='default'>
+  <meta name='google' content='notranslate' />
+  <meta name='description' content="Coding For Good" />
+  <title>Coding for Good | {{ title }}</title>
+  <link rel='stylesheet' type='text/css' href='/dist/styles.css'>
+</head>
+
+<body class='no-fouc'>
+  <header class='header'>
+    <div class='header__ham'><span class='header__ham-bar'></span><span class='header__ham-bar'></span><span class='header__ham-bar'></span><span class='header__ham-bar'></span></div>
+    <a href='/' class='header__logo'>Coding For Good</a>
+  </header>
+  <div class='app'>
+    <div class='app-container' data-title='Coding For Good | {{ title }}'>
+      <ul class='header__links'>
+        {% for p, page_name in pages%}
+        <li><a class='header__links-item {{ p }} {{ page == p ? "s" : "" }}' href='/{{ p == "home" ? "" : p }}'>{{ page_name }}</a></li>
+        {% endfor %}
+      </ul>
+      {% block body %}
+      {% endblock %}
+    </div>
+  </div>
+</body>
+<script src='https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+<script data-pace-options='{ "restartOnPushState" : false }' src='https://cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/pace.min.js'></script>
+<script type='text/javascript' src='/dist/script.js'></script>
+
+</html>
+
+{% endspaceless %}
