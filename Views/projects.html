@@ -34,7 +34,7 @@
       <div class='card-content'>
         <h5 class='card-title'>{{ project.title }}</h5>
         {% set desc = project.desc[0]|split(' ') %}
-        {% set desc = desc.length > 40 ? "#{desc|slice(0, project.img is defined ? 10 : 40)|join(' ')}..." : desc|join(' ') %}
+        {% set desc = "#{desc|slice(0, project.img is defined ? 10 : 40)|join(' ')}..." %}
         <p class=' card-text'>{{ desc }}</p>
       </div>
     </a>
