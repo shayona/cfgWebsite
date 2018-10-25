@@ -32,10 +32,10 @@ class Projects extends \Core\Controller {
 
   function updateAction() {
     if ($this->model->updateProjects()) {
-      http_response_code(500);
+      http_response_code(200);
       echo "Success";
     }else {
-      http_response_code(200);
+      http_response_code(500);
       echo "Error";
     }
   }
