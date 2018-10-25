@@ -32,7 +32,11 @@ class ProjectsModel {
 
     switch ($data) {
       case 'one':
-        $output = $this->projects[$this->id];
+        if (isset($this->projects[$this->id])) {
+          $output = $this->projects[$this->id];
+        }else {
+          throw new \Exception('Project Doesn\'t Exist.');
+        }
         break;
       default:
         $output = $this->projects;
