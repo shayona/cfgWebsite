@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block title %}Our Projects{% endblock %}
+
+{% block body %}
+<div class='section'>
+  <h1>our projects</h1>
+  <h3>As a service, Coding for Good has undertaken numerous different projects, ranging from websites to apps. Below, you may read more about each project and view the finished result.</h3>
+</div>
+<div class='card-group'>
+  {% for id, project in projects %}
+  <div class='card-container'>
+    <a href='/projects/{{ id }}' class='card'>
+      {% if project.img is defined %}
+      <div class='card-img' style='background-image:url({{ project.img }})'></div>
+      {% endif %}
+      <div class='card-content'>
+        <h5 class='card-title'>{{ project.title }}</h5>
+        <p class=' card-text'>{{ "#{project.desc[0]|split(' ')|slice(0, project.img is defined ? 10 : 40)|join(' ')}..." }}</p>
+      </div>
+    </a>
+  </div>
+  {% endfor %}
+</div>
+
+{% endblock %}

@@ -1,17 +1,8 @@
-RewriteEngine on
+Options -Indexes
+
+RewriteEngine On
 RewriteBase /
 
-##Force SSL
-
-#Normal way (in case you need to deploy to NON-heroku)
-RewriteCond %{HTTPS} !=on
-
-#Heroku way
-RewriteCond %{HTTP:X-Forwarded-Proto} !https
-
-#If neither above conditions are met, redirect to https
-RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
-
-RewriteRule ^/?$ /index.php?page=home
-RewriteRule ^([^/\.]+)/?$ /index.php?page=$1
-RewriteRule ^projects/([^/\.]+)?$ /index.php?page=projects&id=$1
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ index.php?$1 [L,QSA]
