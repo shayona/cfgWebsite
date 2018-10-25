@@ -21,7 +21,7 @@ class Projects extends \Core\Controller {
   }
 
   function allProjectsAction() {
-    $this->route_params["projects"] = $this->model->showProjects('all');
+    $this->route_params["projects"] = $this->model->showProjects();
     View::renderTemplate("Projects/all-projects.html", $this->route_params);
   }
 
@@ -31,7 +31,13 @@ class Projects extends \Core\Controller {
   }
 
   function updateAction() {
-    echo ($this->model->updateProjects()) ? "Success" : "Error";
+    if ($this->model->updateProjects()) {
+      http_response_code(200);
+      echo "Success";
+    }else {
+      http_response_code(500);
+      echo "Error";
+    }
   }
 
 }
