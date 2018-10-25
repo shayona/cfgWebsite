@@ -32,10 +32,10 @@ class ProjectsModel {
 
     switch ($data) {
       case 'one':
-        $output = $projects[$this->id];
+        $output = $this->projects[$this->id];
         break;
       default:
-        $output = $projects;
+        $output = $this->projects;
         break;
     }
 
