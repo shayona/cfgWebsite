@@ -20,7 +20,7 @@ class ProjectsModel {
     }
   }
 
-  function showProjects($data) {
+  function showProjects($data = null) {
 
     if (file_exists('../p.json')) {
       $this->projects = json_decode(file_get_contents('../p.json'), true);
