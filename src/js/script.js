@@ -1,13 +1,23 @@
-var shown = 0;
+var shown = 0,
+  page;
 
 function toggleMenu(s) {
-  if (s) {
-    $("body").removeClass('menu_open');
-    shown = 0;
-  } else {
-    $("body").addClass('menu_open');
-    shown = 1;
-  }
+  (s) ? $("body").removeClass('menu_open'): $("body").addClass('menu_open');
+  return (s) ? 0 : 1;
+}
+
+function init() {
+  Pace.on('done', function() {
+    setTimeout(function() {
+      $(".app").animate({
+        "opacity": 1
+      }, 300, function() {
+        page = $(".app-container").data("page");
+        $(`.header__links-item`).removeClass('s');
+        $(`.header__links-item.${page}`).addClass('s');
+      });
+    }, 100);
+  });
 }
 
 function load(name, skipPushState) {
@@ -21,28 +31,35 @@ function load(name, skipPushState) {
 
   Pace.restart();
 
-  $('.app').load(`${name} .app-container`, function() {
-    $("title").html(`Coding For Good | ${$('.app-container').data('title')}`);
-    document.title = `Coding For Good | ${$('.app-container').data('title')}`;
-    document.body.scrollTop = document.documentElement.scrollTop = 0;
+  $(".header__ham").removeClass('open');
+  shown = toggleMenu(1);
 
-    if (name == "/contact") {
-      $(".section").append("<!-- www.123formbuilder.com script begins here --><script type='text/javascript' defer src='//www.123formbuilder.com/embed/3457084.js' data-role='form' data-default-width='650px'></script><!-- www.123formbuilder.com script ends here -->");
-    }
+  $(this).scrollTop(0);
 
-    $(".header__ham").removeClass('open');
-    toggleMenu(1);
+  $(".app").animate({
+    "opacity": 0
+  }, 300, function() {
+    $('.app').load(`${name} .app-container`, function() {
+      $("title").html(`Coding For Good | ${$('.app-container').data('title')}`);
+      document.title = `Coding For Good | ${$('.app-container').data('title')}`;
+      document.body.scrollTop = document.documentElement.scrollTop = 0;
 
-    Pace.stop;
+      init();
+
+      Pace.stop;
+    });
   });
+
 }
 
 $(function() {
 
   $('.no-fouc').fadeIn();
 
+  init();
+
   $('body').on('click', '.header__ham', function() {
-    toggleMenu(shown);
+    shown = toggleMenu(shown);
   });
 
   $("body").on('click', 'a:not(.no_pace)', function(e) {

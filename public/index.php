@@ -19,6 +19,7 @@ $router = new Core\Router();
 
 $router->add('', ['controller' => 'pages', 'action' => 'show-page', 'page' => 'home']);
 $router->add('contact', ['controller' => 'pages', 'action' => 'show-page', 'page' => 'contact']);
+$router->add('hackathon', ['controller' => 'pages', 'action' => 'show-page', 'page' => 'hackathon']);
 
 $router->add('projects', ['controller' => 'projects', 'action' => "all-projects", "page" => "projects"]);
 $router->add('projects/update', ['controller' => 'projects', 'action' => "update"]);

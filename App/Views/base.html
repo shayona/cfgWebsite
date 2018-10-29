@@ -21,15 +21,34 @@
     </div>
     <a href='/' class='header__logo'>Coding For Good</a>
   </header>
+  <nav class='header__nav'>
+    <div class='header__links'>
+      <a class='header__links-item home {{ page == "home" ? "s" : "" }}' href='/'>Home</a>
+      <a class='header__links-item projects {{ page == "projects" ? "s" : "" }}' href='/projects'>Projects</a>
+      <a class='header__links-item projects {{ page == "projects" ? "s" : "" }}' href='/hackathon'>Hackathon</a>
+      <a class='header__links-item contact {{ page == "contact" ? "s" : "" }}' href='/contact'>Contact</a>
+    </div>
+  </nav>
   <div class='app'>
-    <div class='app-container' data-title="{{ block('title') }}">
-      <ul class='header__links'>
-        <li><a class='header__links-item home {{ page == "home" ? "s" : "" }}' href='/'>Home</a></li>
-        <li><a class='header__links-item projects {{ page == "projects" ? "s" : "" }}' href='/projects'>Our Projects</a></li>
-        <li><a class='header__links-item contact {{ page == "contact" ? "s" : "" }}' href='/contact'>Contact</a></li>
-      </ul>
-      {% block body %}
-      {% endblock %}
+    <div class='app-container' data-page="{{ page }}" data-title="{{ block('title') }}">
+      {% block body %}{% endblock %}
+      <footer id='contact'>
+        <div class='content'>
+          <div class='col ros-bottom'>
+            <h1>Join Us!</h1>
+            <p>We love new people.<br> If you would like to join, please meet Mr. Kann</p>
+            <a href='mailto:dak@uwcsea.edu.sg'>dak@uwcsea.edu.sg</a>
+          </div>
+          <div class='col ros-bottom'>
+            <h1>Start a project</h1>
+            <p>Have an idea?<br> Send a proposal. We love taking on new projects.</p>
+            <a href='mailto:email@domain.com'>email@domain.com</a>
+          </div>
+        </div>
+        <div class='copyright ros-bottom'>
+          <span>© 2018 Palash Sharma. All Rights Reserved.</span>
+        </div>
+      </footer>
     </div>
   </div>
 </body>
