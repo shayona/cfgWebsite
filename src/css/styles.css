@@ -1,17 +1,6 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900);
 /*
 
-  Variables
-
-*/
-:root {
-  --main-color: #343a40;
-  --background-color: #fff;
-  --title-color: #333;
-  --title-sec-color: #666;
-}
-/*
-
   Core CSS
 
 */
@@ -26,11 +15,11 @@
 }
 a {
   text-decoration: none !important;
-  color: var(--title-color);
+  color: #333;
 }
 body {
   font-family: 'Roboto', sans-serif;
-  background: var(--background-color);
+  background: #fff;
   padding-top: 64px;
   overflow-x: hidden;
 }
@@ -42,7 +31,7 @@ body {
   display: none
 }
 .pace .pace-progress {
-  background: var(--main-color);
+  background: #343a40;
   position: fixed;
   z-index: 2000;
   top: 0;
@@ -65,22 +54,28 @@ body {
   background: rgba(255, 255, 255, 0);
 }
 .header__ham {
-  width: 25px;
-  height: 25px;
-  margin: 19.5px;
+  width: 64px;
+  height: 64px;
+  padding: 19.5px;
   transform: rotate(0);
   transition: .5s cubic-bezier(.02, .01, .47, 1);
   cursor: pointer;
   display: none;
 }
+.header__ham-container {
+  position: relative;
+  width: 25px;
+  height: 25px;
+  transform: rotate(0);
+  transition: .5s cubic-bezier(.02, .01, .47, 1);
+}
 .header__ham-bar {
   position: absolute;
   height: 3px;
   width: 100%;
-  background: var(--main-color);
+  background: #343a40;
   border-radius: 9px;
   opacity: 1;
-  left: 0;
   transform: rotate(0);
   transition: .25s cubic-bezier(.02, .01, .47, 1)
 }
@@ -110,7 +105,7 @@ body {
   top: 0;
   line-height: 64px;
   display: block;
-  color: var(--main-color);
+  color: #343a40;
   font-weight: 900;
   font-size: 13px;
   text-transform: uppercase;
@@ -142,7 +137,7 @@ body {
 }
 .header__links-item.s {
   pointer-events: none;
-  color: var(--main-color);
+  color: #343a40;
 }
 .header__links-item.projects {
   pointer-events: initial !important;
@@ -171,7 +166,7 @@ body {
   border-radius: 3px;
   transition: 0.3s all cubic-bezier(.02, .01, .47, 1);
   overflow: hidden;
-  border-top: 3px solid var(--main-color);
+  border-top: 3px solid #343a40;
 }
 .card:hover {
   box-shadow: 0 40px 40px rgba(0, 0, 0, .16);
@@ -185,7 +180,7 @@ body {
   margin-top: 0;
 }
 .card-title {
-  color: var(--main-color);
+  color: #343a40;
   font-size: 20px;
   font-weight: 500;
   text-transform: uppercase;
@@ -193,7 +188,7 @@ body {
 }
 .card-text {
   font-size: 16px;
-  color: var(--title-sec-color);
+  color: #666;
   margin-bottom: 10px;
   line-height: 30px;
 }
@@ -229,7 +224,7 @@ body {
   position: relative;
 }
 .section h1 {
-  color: var(--main-color);
+  color: #343a40;
   font-size: 100px;
   letter-spacing: 10px;
   font-weight: 900;
@@ -237,14 +232,14 @@ body {
   display: block;
 }
 .section h2 {
-  color: var(--main-color);
+  color: #343a40;
   font-size: 60px;
   font-weight: 700;
   line-height: 70px;
   display: block;
 }
 .section h3 {
-  color: var(--title-sec-color);
+  color: #666;
   font-size: 30px;
   font-weight: 300;
   line-height: 50px;
@@ -260,7 +255,7 @@ body {
   display: block;
 }
 .section p {
-  color: var(--title-sec-color);
+  color: #666;
   font-size: 20px;
   font-weight: 300;
   line-height: 40px;
@@ -296,13 +291,13 @@ body {
   display: inline-block;
   padding: 13px 0;
   margin-right: 20px;
-  color: var(--main-color);
+  color: #343a40;
   text-transform: uppercase;
   font-weight: 500;
   border-bottom: 2px solid transparent;
 }
 .section .button:hover {
-  border-color: var(--main-color);
+  border-color: #343a40;
 }
 .section .content {
   display: flex;
@@ -340,7 +335,7 @@ body {
   color: #fff;
 }
 .section.hero h1 span {
-  background: var(--main-color);
+  background: #343a40;
   display: inline-block;
   margin: 3px 0;
 }
