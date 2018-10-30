@@ -26,7 +26,7 @@ class ProjectsModel {
       $this->projects = json_decode(file_get_contents('../p.json'), true);
     }
 
-    if (!isset($projects)) {
+    if (!isset($this->projects)) {
       $this->updateProjects();
     }
 
