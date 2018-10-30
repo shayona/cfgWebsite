@@ -67,6 +67,24 @@ body {
   Header
 
 */
+.designer {
+  position: fixed;
+  right: 20px;
+  top: 40%;
+  line-height: 64px;
+  color: #fff;
+  font-weight: 700;
+  font-size: 13px;
+  text-transform: uppercase;
+  transform: rotate(90deg) translateY(-50%);
+  transform-origin: bottom;
+  z-index: 1;
+  mix-blend-mode: exclusion;
+  color: #999;
+}
+.designer a {
+  color: #fbfbfb;
+}
 .header {
   position: fixed;
   top: 40px;
