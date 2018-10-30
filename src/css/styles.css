@@ -24,9 +24,7 @@ body {
   overflow-x: hidden;
 }
 .pace {
-  -webkit-pointer-events: none;
   pointer-events: none;
-  -webkit-user-select: none;
   user-select: none;
 }
 .pace.pace-inactive .pace-progress {
@@ -284,7 +282,7 @@ body:not(.menu_open) .header__ham:hover .header__ham-bar:nth-child(4) {
 .section {
   width: 100%;
   height: 100%;
-  padding: 100px 119px 50px;
+  padding: 100px 119px;
   max-width: 1920px;
   margin: 0 auto;
   position: relative;
@@ -306,6 +304,13 @@ body:not(.menu_open) .header__ham:hover .header__ham-bar:nth-child(4) {
   display: block;
 }
 .section h3 {
+  color: #343a40;
+  font-size: 45px;
+  font-weight: 400;
+  margin-bottom: 20px;
+  display: block;
+}
+.section h5 {
   color: #666;
   font-size: 30px;
   font-weight: 300;
@@ -313,7 +318,7 @@ body:not(.menu_open) .header__ham:hover .header__ham-bar:nth-child(4) {
   display: block;
   margin: 30px 0;
 }
-.section h4 {
+.section h6 {
   color: #333;
   font-size: 15px;
   font-weight: 900;
@@ -326,7 +331,7 @@ body:not(.menu_open) .header__ham:hover .header__ham-bar:nth-child(4) {
   font-size: 20px;
   font-weight: 300;
   line-height: 40px;
-  margin: 30px 0;
+  margin: 0 0 30px;
   display: block;
 }
 .section .img {
@@ -383,6 +388,22 @@ body:not(.menu_open) .header__ham:hover .header__ham-bar:nth-child(4) {
 }
 /*
 
+  Map
+
+*/
+.map {
+  height: 80vh;
+  width: 100%;
+}
+.map iframe {
+  overflow: hidden;
+  background: none !important;
+  height: 100%;
+  width: 100%;
+  border: none;
+}
+/*
+
   BG
 
 */
@@ -401,12 +422,12 @@ body:not(.menu_open) .header__ham:hover .header__ham-bar:nth-child(4) {
   font-size: 90px;
   position: relative;
   color: #fff;
-  mix-blend-mode: exclusion;
 }
 .section.hero h1 span {
   padding: 0 10px;
   display: inline-block;
   margin: 3px 0;
+  background: var(--span-bg, #000);
 }
 .bg {
   height: 100%;
@@ -421,6 +442,11 @@ body:not(.menu_open) .header__ham:hover .header__ham-bar:nth-child(4) {
   right: 0;
   z-index: -1;
 }
+/*
+
+  Footer
+
+*/
 footer {
   background: #000;
   width: 100%;
@@ -624,11 +650,11 @@ footer .social a:hover {
     font-size: 30px;
     line-height: 50px !important;
   }
-  .section h3 {
+  .section h5 {
     font-size: 18px;
     line-height: 35px;
   }
-  .section h4 {
+  .section h6 {
     font-size: 12px;
     line-height: 20px;
   }
