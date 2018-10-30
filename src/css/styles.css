@@ -62,11 +62,6 @@ body {
 .menu_open .app {
   transform: matrix(0.95, 0, 0, 0.95, 0, 0);
 }
-/*
-
-  Header
-
-*/
 .designer {
   position: fixed;
   right: 0;
@@ -85,6 +80,11 @@ body {
 .designer a {
   color: #fbfbfb;
 }
+/*
+
+  Header
+
+*/
 .header {
   position: fixed;
   top: 40px;
@@ -531,6 +531,9 @@ footer .social a:hover {
 @media screen and (max-width: 860px) {
   body {
     padding-top: 64px;
+  }
+  .designer {
+    display: none;
   }
   .header {
     background: #000;
