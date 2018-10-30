@@ -69,8 +69,8 @@ body {
 */
 .designer {
   position: fixed;
-  right: 20px;
-  top: 40%;
+  right: 0;
+  top: 45%;
   line-height: 64px;
   color: #fff;
   font-weight: 700;
