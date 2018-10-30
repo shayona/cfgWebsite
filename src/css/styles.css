@@ -70,7 +70,7 @@ body {
   font-size: 13px;
   text-transform: uppercase;
   transform: rotate(90deg) translateY(-50%);
-  transform-origin: bottom;
+  transform-origin: bottom center;
   z-index: 1;
   mix-blend-mode: exclusion;
   color: #999;
@@ -155,7 +155,7 @@ body:not(.menu_open) .header__ham:hover .header__ham-bar:nth-child(4) {
   font-size: 13px;
   text-transform: uppercase;
   transform: rotate(-90deg);
-  transform-origin: bottom;
+  transform-origin: bottom center;
 }
 .header__nav {
   height: 100%;
