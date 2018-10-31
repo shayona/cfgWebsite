@@ -192,7 +192,7 @@ body:not(.menu_open) .header__ham:hover .header__ham-bar:nth-child(4) {
   font-weight: 700;
   letter-spacing: 0.3vmax;
   text-align: left;
-  font-size: 7vmax;
+  font-size: 6.2vmax;
   margin: 1vmax 0;
   cursor: pointer;
 }

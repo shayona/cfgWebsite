@@ -34,8 +34,6 @@ function load(name, skipPushState) {
   $(".header__ham").removeClass('open');
   shown = toggleMenu(1);
 
-  $(this).scrollTop(0);
-
   $(".app").animate({
     "opacity": 0
   }, 300, function() {
