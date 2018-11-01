@@ -22,7 +22,7 @@
   <p>{{ para }}</p>
   {% endfor %}
   {% if project.url is defined %}
-  <a class='button no_pace' target='_BLANK' href='{{ project.url }}'>VIEW THIS PROJECT</a>
+  <a class='button no_pace' target='_BLANK' href='{{ project.url }}'>VIEW {{ project.title }}</a>
   {% endif %}
 </div>
 
