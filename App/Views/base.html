@@ -32,34 +32,42 @@
   <div class='designer'>* Designed by <a class='no_pace' href='https://palashsharma.com' target="_BLANK">Palash Sharma</a></div>
   <div class='app'>
     <div class='app-container' data-page="{{ page }}" data-title="{{ block('title') }}">
-      {% block body %}{% endblock %}
-      <footer id='contact'>
-        <div class='content'>
-          <div class='col ros-bottom'>
-            <h1>Join Us</h1>
-            <p>Want to inspire change? Join us.<br> Please meet Mr. Kann for details.</p>
-            <a href='mailto:dak@uwcsea.edu.sg'>dak@uwcsea.edu.sg</a>
-          </div>
-          <div class='col ros-bottom'>
-            <h1>Start a project</h1>
-            <p>Have an idea?<br> Send a proposal. We love taking on new projects.</p>
-            <a href='mailto:dak@uwcsea.edu.sg'>dak@uwcsea.edu.sg</a>
-          </div>
-          <div class='col ros-bottom'>
-            <h1>Support Us</h1>
-            <p>Are you interested in supporting our cause?<br> Help us through sponsorship or by sharing your expertise.</p>
-            <a href='mailto:dak@uwcsea.edu.sg'>dak@uwcsea.edu.sg</a>
-          </div>
-        </div>
-        <div class='copyright ros-bottom'>
-          <span>© 2018 Palash Sharma. All Rights Reserved.</span>
-        </div>
-      </footer>
+
+      {% block body %}
+      {% endblock %}
+
     </div>
   </div>
+  <footer id='contact'>
+    <div class='content'>
+      <div class='col ros-bottom'>
+        <h1>Join Us</h1>
+        <p>Want to inspire change? Join us.<br> Please meet Mr. Kann for details.</p>
+        <a href='mailto:dak@uwcsea.edu.sg'>dak@uwcsea.edu.sg</a>
+      </div>
+      <div class='col ros-bottom'>
+        <h1>Start a project</h1>
+        <p>Have an idea?<br> Send a proposal. We love taking on new projects.</p>
+        <a href='mailto:dak@uwcsea.edu.sg'>dak@uwcsea.edu.sg</a>
+      </div>
+      <div class='col ros-bottom'>
+        <h1>Support Us</h1>
+        <p>Are you interested in supporting our cause?<br> Help us through sponsorship or by sharing your expertise.</p>
+        <a href='mailto:dak@uwcsea.edu.sg'>dak@uwcsea.edu.sg</a>
+      </div>
+    </div>
+    <div class='copyright ros-bottom'>
+      <span>© 2018 Palash Sharma. All Rights Reserved.</span>
+    </div>
+  </footer>
 </body>
 <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
-<script src='https://cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/pace.min.js' data-pace-options='{ "restartOnPushState" : false }'></script>
+<script>
+  window.paceOptions = {
+    "restartOnPushState": false
+  }
+</script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/pace.min.js'></script>
 <script type='text/javascript' src='/dist/script.js'></script>
 
 </html>
