@@ -7,17 +7,15 @@ function toggleMenu(s) {
 }
 
 function init() {
-  Pace.on('done', function() {
-    setTimeout(function() {
-      $(".app").animate({
-        "opacity": 1
-      }, 300, function() {
-        page = $(".app-container").data("page");
-        $(`.header__links-item`).removeClass('s');
-        $(`.header__links-item.${page}`).addClass('s');
-      });
-    }, 100);
-  });
+  setTimeout(function() {
+    $(".app").animate({
+      "opacity": 1
+    }, 300, function() {
+      page = $(".app-container").data("page");
+      $(`.header__links-item`).removeClass('s');
+      $(`.header__links-item.${page}`).addClass('s');
+    });
+  }, 100);
 }
 
 function load(name, skipPushState) {
@@ -29,7 +27,7 @@ function load(name, skipPushState) {
     window.history.pushState(state, "Coding For Good", name);
   }
 
-  Pace.restart();
+  //Pace.restart();
 
   $(".header__ham").removeClass('open');
   shown = toggleMenu(1);
@@ -44,7 +42,7 @@ function load(name, skipPushState) {
 
       init();
 
-      Pace.stop;
+      //Pace.stop;
     });
   });
 
@@ -54,7 +52,9 @@ $(function() {
 
   $('.no-fouc').fadeIn();
 
-  init();
+  Pace.on('done', function() {
+    init();
+  });
 
   $('body').on('click', '.header__ham', function() {
     shown = toggleMenu(shown);
