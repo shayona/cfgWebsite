@@ -27,8 +27,6 @@ function load(name, skipPushState) {
     window.history.pushState(state, "Coding For Good", name);
   }
 
-  //Pace.restart();
-
   $(".header__ham").removeClass('open');
   shown = toggleMenu(1);
 
@@ -36,13 +34,13 @@ function load(name, skipPushState) {
     "opacity": 0
   }, 300, function() {
     $('.app').load(`${name} .app-container`, function() {
-      $("title").html(`Coding For Good | ${$('.app-container').data('title')}`);
-      document.title = `Coding For Good | ${$('.app-container').data('title')}`;
+      $title = `Coding For Good | ${$('.app-container').data('title')}`;
+      $("title").html($title);
+      document.title = $title;
       document.body.scrollTop = document.documentElement.scrollTop = 0;
 
       init();
 
-      //Pace.stop;
     });
   });
 
