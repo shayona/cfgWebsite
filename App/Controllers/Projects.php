@@ -15,18 +15,17 @@ use App\Models\ProjectsModel;
 class Projects extends \Core\Controller {
 
   function before(){
-    $this->model = new ProjectsModel(
-      ((isset($this->route_params["id"])) ? $this->route_params["id"] : null)
-    );
+    $this->model = new ProjectsModel();
   }
 
   function allProjectsAction() {
-    $this->route_params["projects"] = $this->model->showProjects();
+    $this->route_params["projects"] = $this->model->allProjects();
     View::renderTemplate("Projects/all-projects.html", $this->route_params);
   }
 
   function showProjectAction() {
-    $this->route_params["project"] = $this->model->showProjects('one');
+    $id = $this->route_params["id"];
+    $this->route_params["project"] = $this->model->showProject($id);
     View::renderTemplate("Projects/show-project.html", $this->route_params);
   }
 

@@ -11,39 +11,27 @@ namespace App\Models;
 
 class ProjectsModel {
 
-  public $id;
   public $projects;
 
-  function __construct($id) {
-    if (isset($id)) {
-      $this->id = $id;
-    }
-  }
-
-  function showProjects($data = null) {
-
+  function __construct() {
     if (file_exists('../p.json')) {
       $this->projects = json_decode(file_get_contents('../p.json'), true);
     }
-
     if (!(isset($this->projects))) {
       $this->updateProjects();
     }
+  }
 
-    switch ($data) {
-      case 'one':
-        if (isset($this->projects[$this->id])) {
-          $output = $this->projects[$this->id];
-        }else {
-          throw new \Exception('Project Doesn\'t Exist.');
-        }
-        break;
-      default:
-        $output = $this->projects;
-        break;
+  function allProjects(){
+    return $this->projects;
+  }
+
+  function showProject($id) {
+    if (isset($this->projects[$id])) {
+      return $this->projects[$id];
+    }else {
+      throw new \Exception('Project Doesn\'t Exist.');
     }
-
-    return $output;
   }
 
   function updateProjects() {
