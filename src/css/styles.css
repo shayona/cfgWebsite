@@ -338,7 +338,7 @@ body:not(.menu_open) .header__ham:hover .header__ham-bar:nth-child(4) {
 .section .img {
   margin: 2.7vmin 0;
   background-position: center;
-  background-size: cover;
+  background-size: contain;
   background-repeat: no-repeat;
   height: 73vmin;
   width: 100%;
